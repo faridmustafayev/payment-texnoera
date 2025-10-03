@@ -4,6 +4,7 @@ WORKDIR /home/gradle/project
 COPY . .
 RUN gradle clean build --no-daemon
 
+
 # Stage 2: run the app
 FROM eclipse-temurin:17-jdk
 WORKDIR /app
