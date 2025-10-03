@@ -1,8 +1,8 @@
 package com.example.payment.texnoera.controller;
 
-import com.example.payment.texnoera.dao.entity.UserEntity;
-import com.example.payment.texnoera.dao.repository.UserRepository;
 import com.example.payment.texnoera.dto.request.UserRequest;
+import com.example.payment.texnoera.dto.response.UserResponse;
+import com.example.payment.texnoera.service.abstraction.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,19 +19,12 @@ import static org.springframework.http.HttpStatus.CREATED;
 @RequiredArgsConstructor
 @FieldDefaults(level = PRIVATE, makeFinal = true)
 public class UserController {
-    UserRepository userRepository;
+    UserService userService;
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public void saveUser(@RequestBody UserRequest request) {
-
-        UserEntity userEntity = UserEntity.builder()
-                .balance(request.getBalance())
-                .name(request.getName())
-                .build();
-
-        userRepository.save(userEntity);
-
+    public UserResponse saveUser(@RequestBody UserRequest request) {
+        return userService.saveUser(request);
     }
 
 }
