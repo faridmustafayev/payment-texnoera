@@ -36,14 +36,14 @@ public class PaymentServiceImpl implements PaymentService {
         userRepository.save(userEntity);
 
         PaymentEntity payment = PaymentEntity.builder()
-                .userId(userEntity.getId())
+                .userId(request.getUserId())
                 .amount(request.getAmount())
                 .build();
 
         paymentRepository.save(payment);
 
         return PaymentResponse.builder()
-                .userId(payment.getId())
+                .userId(payment.getUserId())
                 .amount(payment.getAmount())
                 .id(payment.getId())
                 .build();
