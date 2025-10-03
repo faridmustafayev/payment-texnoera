@@ -7,7 +7,7 @@ services:
       POSTGRES_USER: postgres_m5zf_user
       POSTGRES_PASSWORD: ZVRUxHBbZ3SHWyAQYlHUev3DyOFXxA2h
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
