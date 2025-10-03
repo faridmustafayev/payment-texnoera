@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20251001
+      author: Farid Mustafayev
+      changes:
+        - createTable:
+            tableName: payments
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: amount
+                  type: NUMERIC(10, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
