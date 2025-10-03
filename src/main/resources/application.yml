@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/postgres
-    username: payment
-    password: password
+    url: jdbc:postgresql://dpg-d3fpekvfte5s73dd4gi0-a:5432/postgres_m5zf
+    username: postgres_m5zf_user
+    password: ZVRUxHBbZ3SHWyAQYlHUev3DyOFXxA2h
     driver-class-name: org.postgresql.Driver
   jpa:
     open-in-view: false
